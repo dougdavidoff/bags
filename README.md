@@ -1,18 +1,24 @@
-TITLE: Remember the Bags!
+# Remember the Bags
 
-PROJECT DESCRIPTION:
-A new app to remind the user to use his or her recyclable shopping bags when he or she arrives at a favorite grocery store or other shop.
+![People Holding Reusable Bags](/assets/img/peopleHoldingBags.jpg)
 
-USER STORY:
-- AS A SHOPPER in my local community
-- I WANT a reminder to use recyclable shopping bags in my favorite stores
-- SO THAT I don’t get charged 10 cents for every bag I use (and to save the planet)
+## Description
 
-APIs TO USE:
-- Google maps to locate grocery stores near me.
-- Bandwith SMS texting API
+A new app that reminds the user to use his or her reusable shopping bags whe he or she arrives at their favorite grocery store or shopping outlet.
 
-ROUGH BREAKDOWN OF TASKS:
-- Google Maps API — Doug
-- Github - Doug
-- Wireframe Sketch and UI — Jay
+## User Story
+
+* AS A SHOPPER in my local community
+* I WANT a reminder to use reusable shopping bags in my favorite stores.
+* SO THAT I don't get charged for disposable bags (and to save the planet!)
+
+## APIs To Use
+
+* Google maps to locate stores near me.
+* Bandwidth SMS texting API
+
+## Rough Breakdow of Tasks
+
+* Google Maps API - Doug
+* Messaging API - Thalia
+* UI - Jay
