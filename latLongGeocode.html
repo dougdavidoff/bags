@@ -10,19 +10,31 @@
     </head>
 
     <body>
+        <p>Click the button to enter your favorite supermarket.</p>
+        <p id="storeField"</p>
+
+        <button onclick="storeGeocode()">Find store location</button>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script>
-            var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address=Stop+and+Shop+South+Windsor+CT&key=AIzaSyCp1Hm5-sM97iQxz_XdACafduJ7_LMMdlk";
+            function storeGeocode() {
+                var storeEntry = prompt("Please enter your store location", "Type store info here");
+                if (storeEntry != null) {
+                    document.getElementById("storeField").innerHTML = "You entered: " + storeEntry;
+                }
+            
+                var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + storeEntry + "&key=AIzaSyCp1Hm5-sM97iQxz_XdACafduJ7_LMMdlk";
 
-            $.ajax({
-            url: queryURL,
-            method: "GET"
-            })
+                $.ajax({
+                url: queryURL,
+                method: "GET"
+                })
 
-            .then(function(response) {
-            var results = response.results;
-            console.log(response.results);
-            })
+                .then(function(response) {
+                    var results = response.results;
+                    console.log(response.results);
+                    alert("Your store is located at Latitude " + response.results[0].geometry.location.lat + " and Longitude " + response.results[0].geometry.location.lng)
+                })
+            }
         </script>
     </body>
