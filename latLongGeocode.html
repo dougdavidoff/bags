@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>GoogleMaps API Test</title
+        <script
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCp1Hm5-sM97iQxz_XdACafduJ7_LMMdlk&callback=initMap&libraries=&v=weekly"
+          defer
+        ></script>    
+    </head>
+
+    <body>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address=Stop+and+Shop+South+Windsor+CT&key=AIzaSyCp1Hm5-sM97iQxz_XdACafduJ7_LMMdlk";
+
+            $.ajax({
+            url: queryURL,
+            method: "GET"
+            })
+
+            .then(function(response) {
+            var results = response.results;
+            console.log(response.results);
+            })
+        </script>
+    </body>
