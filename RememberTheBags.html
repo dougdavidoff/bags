@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Remember the Bags</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Google Maps API and Google jQuery & AJAX APIn -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCp1Hm5-sM97iQxz_XdACafduJ7_LMMdlk&callback=initMap&libraries=&v=weekly" defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+    
+    </head>
+
+    <body>
+
+        <!-- Inline stylesheet for Google Maps -->
+        <style>
+            /* Always set the map height explicitly to define the size of the div * element that contains the map. */
+            #map {
+                height: 100%;
+            }
+
+            /* Optional: Makes the sample page fill the window. */
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>        
+
+
+        <!-- We ask the user to identify their supermarket and then we geococde it into latitude and longitude -->
+        <p>Click the button to enter your favorite supermarket.</p>
+        <p id="storeField"</p>
+        <p id="storeLocale"</p>
+
+        <button onclick="storeGeocode()">Find store location</button>
+
+        <!-- Map to center on store and show user location -->
+        <div id="map"></div>
+        
+        
+        
+        
+        <script>
+            var results;
+            var storeLat;
+            var storeLng;
+            var userLat;
+            var userLng;
+
+            // Begin store geocoding code
+            function storeGeocode() {
+                var storeEntry = prompt("Please enter your store location", "Type store info here");
+                if (storeEntry != null) {
+                    document.getElementById("storeField").innerHTML = "You entered: <strong>" + storeEntry + "</strong>";
+                }
+
+                //The API call to Google for the store geocode with latitude and longitude
+                var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + storeEntry + "&key=AIzaSyCp1Hm5-sM97iQxz_XdACafduJ7_LMMdlk";
+
+                $.ajax({
+                url: queryURL,
+                method: "GET"
+                })
+
+                // Receiving the response
+                .then(function(response) {
+                    results = response.results;
+                    document.getElementById("storeLocale").innerHTML = "Your store is located at Latitude <strong>" + response.results[0].geometry.location.lat + "</strong> and Longitude <strong>" + response.results[0].geometry.location.lng + "</strong>";
+
+                    // Setting the response to global variables
+                    storeLat = response.results[0].geometry.location.lat;
+                    storeLng = response.results[0].geometry.location.lng;
+                    console.log("StoreLat and StoreLng: " + storeLat + " and " + storeLng);
+                })
+            }
+
+            //outside function, still showing storeLat and storeLng
+            console.log ("Outside function, showing StoreLat and StoreLng: " + storeLat + " and " + storeLng);
+
+            // creating map centered on store location
+            var map, infoWindow;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById("map"), {
+                center: {lat: storeLat, lng: storeLng},
+                zoom: 12
+                });
+                infoWindow = new google.maps.InfoWindow;
+
+                // Finding current location of user
+                if (navigator.geolocation) {
+                    navigator.geolocation.watchPosition(function(position) {
+                        var pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
+                        console.log("Current position latitude: " + position.coords.latitude);
+                        console.log("Current position longitude: " + position.coords.longitude);
+                        userLat = position.coords.latitude;
+                        userLng = position.coords.location;
+                        infoWindow.setPosition(pos);
+                        infoWindow.setContent('Location found.');
+                        infoWindow.open(map);
+                        map.setCenter(pos);
+                    }, function() {
+                        handleLocationError(true, infoWindow, map.getCenter());
+                    }); 
+                } else {
+                    // Browser doesn't support Geolocation
+                    handleLocationError(false, infoWindow, map.getCenter());
+                }
+
+                // Below is math to see if user location is within 1/8th-mile of the store location. If it is, launch alert to "Remember the Bags"
+
+                if ((userLat < (storeLat + 0.00208)) || (userLat > (storeLat - 0.00208)) || (userLng < (storeLng + 0.00208)) || (userLng > (storeLng - 0.00208))) {
+                    alert("Remember the Bags!");
+                }
+            }
+
+            function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                infoWindow.setPosition(pos);
+                infoWindow.setContent(browserHasGeolocation ?
+                    'Error: The Geolocation service failed.' :
+                    'Error: Your browser doesn\'t support geolocation.');
+                infoWindow.open(map);
+            }
+
+
+
+        </script>
+    </body>
+</html>

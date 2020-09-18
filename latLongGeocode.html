@@ -12,6 +12,7 @@
     <body>
         <p>Click the button to enter your favorite supermarket.</p>
         <p id="storeField"</p>
+        <p id="storeLocale"</p>
 
         <button onclick="storeGeocode()">Find store location</button>
         
@@ -20,7 +21,7 @@
             function storeGeocode() {
                 var storeEntry = prompt("Please enter your store location", "Type store info here");
                 if (storeEntry != null) {
-                    document.getElementById("storeField").innerHTML = "You entered: " + storeEntry;
+                    document.getElementById("storeField").innerHTML = "You entered: <strong>" + storeEntry + "</strong>";
                 }
             
                 var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + storeEntry + "&key=AIzaSyCp1Hm5-sM97iQxz_XdACafduJ7_LMMdlk";
@@ -32,8 +33,9 @@
 
                 .then(function(response) {
                     var results = response.results;
+                    document.getElementById("storeLocale").innerHTML = "Your store is located at Latitude <strong>" + response.results[0].geometry.location.lat + "</strong> and Longitude <strong>" + response.results[0].geometry.location.lng + "</strong>";
                     console.log(response.results);
-                    alert("Your store is located at Latitude " + response.results[0].geometry.location.lat + " and Longitude " + response.results[0].geometry.location.lng)
+                    // alert("Your store is located at Latitude " + response.results[0].geometry.location.lat + "  and Longitude " + response.results[0].geometry.location.lng)
                 })
             }
         </script>
