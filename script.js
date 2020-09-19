@@ -4,11 +4,31 @@ var storeLng;
 var userLat;
 var userLng;
 var map, infoWindow;
+var storeEntry;
 
 
-// This section geocodes the store after it is identified by the user. This section works.
+
+
+
+storeGeocode();
+
+console.log("Repeating: The store is located at " + storeLat + " and " + storeLng);
+
+initMap();
+
+// Below is math to see if user location is within 1/8th-mile of the store location. If it is, launch alert to "Remember the Bags"
+if ((userLat < (storeLat + 0.00208)) || (userLat > (storeLat - 0.00208)) || (userLng < (storeLng + 0.00208)) || (userLng > (storeLng - 0.00208))) {
+    alert("Remember the Bags!");
+}
+
+
+
+
+
+
+// This function geocodes the store after it is identified by the user.
 function storeGeocode() {
-    var storeEntry = prompt("Please enter your store location", "Type store info here");
+    storeEntry = prompt("Please enter your store location", "Type store info here");
     if (storeEntry != null) {
         document.getElementById("storeField").innerHTML = "You entered: <strong>" + storeEntry + "</strong>";
     }
@@ -31,21 +51,24 @@ function storeGeocode() {
         storeLat = response.results[0].geometry.location.lat;
         storeLng = response.results[0].geometry.location.lng;
 
-        console.log("The store is located at " + storeLat + " and " + storeLng);
+        console.log("First time: The store is located at " + storeLat + " and " + storeLng);
         
     })
 }
 
-console.log("Repeating: The store is located at " + storeLat + " and " + storeLng);
 
-// Note: This code requires that the user consent to location sharing when
+
+
+
+// Note: This code in the function below requires that the user consent
+// to location sharing when
 // prompted by the browser. If the user sees the error "The Geolocation service
 // failed.", it means the user probably did not give permission for the browser to
 // locate the user.    
            
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 41.1918, lng: -73.1977},
+        center: {lat: storeLat, storeLng: -73.1977},
         zoom: 12
     });
 
@@ -59,7 +82,7 @@ function initMap() {
                 lng: position.coords.longitude
             };
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
+            infoWindow.setContent('User location found.');
             infoWindow.open(map);
             map.setCenter(pos);
         }, function() {
@@ -72,11 +95,6 @@ function initMap() {
 }
 
 
-// Below is math to see if user location is within 1/8th-mile of the store location. If it is, launch alert to "Remember the Bags"
-
-if ((userLat < (storeLat + 0.00208)) || (userLat > (storeLat - 0.00208)) || (userLng < (storeLng + 0.00208)) || (userLng > (storeLng - 0.00208))) {
-    alert("Remember the Bags!");
-}
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
