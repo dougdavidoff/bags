@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remember the Bags!</title>
+
+
+    <!-- Favicon-->
+    <link rel="icon" href="assets/img/favicon.png">
+
+    <!-- Normalize CSS-->
+    <link type="text/css" rel="stylesheet" href="assets/css/normalize.css" />
+
+    <!-- Skeleton CSS -->
+    <link type="text/css" rel="stylesheet" href="assets/css/skeleton.css" />
+
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+
+
+    <!--Header-->
+    <header id="header">
+        <div class="row">
+            <div>
+                <h2>Remember the Bags!</h2>
+                <h5 id="dateDisplay"></h5>
+                <hr>
+                <p id="weatherDisplay"></p>
+                <hr>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container">
+
+        <secton id="getStarted">
+            <div class="row u-text-center">
+                <div></div>
+
+
+                <div class="row">
+
+                    <div class="six columns">
+                        <form>
+                            <h5 class="myStoresHeading">Let's Add a Store!</h5>
+                            
+                            <label for="storeInput">Select a Store</label>
+                            <select class="u-full-width" id="storeInput">
+                                <option value="Option 1">Stop and Shop</option>
+                                <option value="Option 2">Big Y</option>
+                                <option value="Option 3">Massy Stores</option>
+                            </select>
+                            <label for="cityInput">Enter City Name</label>
+                            <input type="text" class="u-full-width" placeholder="ex: South Windsor" id="cityInput">
+                            <label for="StateInput">Enter State Name</label>
+                            <input type="text" class="u-full-width" placeholder="ex: CT" id="stateInput">
+                            <p><button id="getInfoBtn" class="button">Add Store</button></p>
+                            <!--<input id="getInfoBtn" class="button-primary" type="submit" value="Submit">-->
+                        </form>
+                    </div>
+
+                    <div class="six columns">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d95140.82297205381!2d-72.6303734198426!3d41.8250525971858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sstop%20and%20shop!5e0!3m2!1sen!2sus!4v1600433617716!5m2!1sen!2sus"
+                            width="350" height="350" frameborder="0" style="border:0;" allowfullscreen=""
+                            aria-hidden="false" tabindex="0">
+                        </iframe>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </secton>
+        <!-- </div> -->
+
+        <br>
+        <hr>
+        <br>
+
+        <!-- Main Content -->
+        <!--<div class="container">-->
+        <main id="mainContent" class="section section-a">
+            <div class="row">
+                <div>
+                    <h5 class="myStoresHeading">My Stores</h5>
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div id="myStores" class="six columns">
+                    <hr>
+                    <p id="store1">Stop & Shop South Windsor</p>
+                    <hr>
+                    <p id="store2">Big Y South Windsor</p>
+                    <hr>
+                    <p id="store3">Massy Stores</p>
+                    <hr>
+                    <p id="store4">Stop & Shop East Hartford</p>
+                    <hr>
+                    <!--<form>
+                        <label for="nameInput">Your Name</label>
+                        <input class="u-full-width" type="text" placeholder="Hint: This is your name" id="nameInput">
+                        <label for="zipInput">Zip Code</label>
+                        <input class="u-full-width" type="text" placeholder="Hint: This is your name" id="zipInput">
+                    </form>-->
+                </div>
+                <div id="imageTwoPeople" class="six columns">
+                    <img id="twoBagPeople" src="assets/img/peopleWithBags.jpg" alt="">
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    
+
+
+    <div class="spacer"></div>
+
+    <!-- End Container-->
+    </div>
+
+    <footer id="footer" class="section">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <p>This site was created by team codeAwesome</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="spacer"></div>
+
+
+
+    <!-- jQuery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Moment js-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"
+        integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg=="
+        crossorigin="anonymous"></script>
+
+    <!-- Custom JS-->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
+
+
+</body>
