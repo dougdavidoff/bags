@@ -53,8 +53,26 @@ function storeGeocode() {
 
         console.log("First time: The store is located at " + storeLat + " and " + storeLng);
         
+
+        var apiKey = '08fed0ddeae70765e29238f931a921a5';
+
+        var query = 'https://api.openweathermap.org/data/2.5/weather?lat=' + storeLat + '&lon=' + storeLng + '&units=imperial&appid=' + apiKey;
+        
+                $.ajax({
+                url: query,
+                method: 'GET'
+            }).then(function(res){
+                console.log(res);
+                alert(res.weather[0].description)
+                console.log('Temperature: ' +res.main.temp + '°F')
+                
+            })
+        
+        
     })
+
 }
+
 
 
 
@@ -103,3 +121,5 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
 }
+
+ 
