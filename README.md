@@ -15,10 +15,14 @@ A new app that reminds the user to use his or her reusable shopping bags whe he 
 ## APIs To Use
 
 * Google maps to locate stores near me.
-* Bandwidth SMS texting API
+* OpenWeatherMap API to get my weather.
 
 ## Rough Breakdow of Tasks
 
 * Google Maps API - Doug
-* Messaging API - Thalia
+* OpenWeatherMap API - Thalia
 * UI - Jay
+
+## Link To Deployed Project
+ https://dougdavidoff.github.io/bags/index.html.
+ 
