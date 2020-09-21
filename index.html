@@ -1,24 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <!-- Custom CSS-->
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Remember the Bags</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<body>
+        <!-- Stylesheet link-->
+        <link rel="stylesheet" href="style.css">  
     
+    </head>
 
+    <body>
 
+        <p>Click the button to enter your favorite supermarket.</p>
+        <p id="storeField"</p>
+        <p id="storeLocale"</p>
 
+        <button onclick="storeGeocode()">Find store location</button>
 
-    <!-- Custom JS-->
-    <script src="assets/js/script.js"></script>
+        <!-- Map to center on store and show user location -->
+        <div id="map"></div>
 
-</body>
-
+        <!-- Google Maps API, Google jQuery & AJAX API, and custom script files -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCp1Hm5-sM97iQxz_XdACafduJ7_LMMdlk&callback=initMap" defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+        
+    </body>
 </html>

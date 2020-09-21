@@ -50,10 +50,22 @@ function storeGeocode() {
         
         initMap();
 
+        // // Below is math to see if user location is within 1/8th-mile of the store location. If it is, launch alert to "Remember the Bags"
+        // if ((userLat < (storeLat + 0.00208)) || (userLat > (storeLat - 0.00208)) || (userLng < (storeLng + 0.00208)) || (userLng > (storeLng - 0.00208))) {
+        //     alert("Remember the Bags!");
+        // }
+
+        // // Below is math to see if user location is within 1/8th-mile of the store location. If it is, launch alert to "Remember the Bags"
+        // if ((41.177222 < (41.177222 + 0.00208)) || (41.177222 > (41.177222 - 0.00208)) || (-73.188372 < (-73.188372 + 0.00208)) || (-73.188372 > (-73.188372 - 0.00208))) {
+        //     alert("Remember the Bags!");
+        // }
+
+
         // Below is math to see if user location is within 1/8th-mile of the store location. If it is, launch alert to "Remember the Bags"
-        if ((userLat < (storeLat + 0.00208)) || (userLat > (storeLat - 0.00208)) || (userLng < (storeLng + 0.00208)) || (userLng > (storeLng - 0.00208))) {
+        if ((41.177222 < (storeLat + 0.00208)) || (41.177222 > (storeLat - 0.00208)) || (-73.188372 < (storeLng + 0.00208)) || (storeLng > (-73.188372 - 0.00208))) {
             alert("Remember the Bags!");
         }
+
 
     })
 }
@@ -90,7 +102,7 @@ function initMap() {
             };
             console.log(pos.lat + " and " + pos.lng);
             infoWindow.setPosition(pos);
-            infoWindow.setContent('User location found.');
+            infoWindow.setContent('You are here.');
             infoWindow.open(map);
             map.setCenter(pos);
         }, function() {
