@@ -1,0 +1,207 @@
+
+#landingPage {
+    text-align: center;
+    padding-top: 3rem;
+    height: 100%vh;
+}
+
+#header {
+    text-align: center;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+#learnMoreBtn{
+    border: none;
+}
+
+#learnMore {
+    display: none;
+    height: 100%vh;
+    background-color: rgb(94, 115, 212);
+}
+
+#mainContent {
+    min-height: 100%vh;
+    
+}
+
+
+
+.myStoresHeading {
+    text-decoration: underline;
+}
+
+#getStarted {
+    min-height: 100%vh;
+}
+
+#myStores {
+    /*background-color: lightgray;*/
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 0rem;
+    margin-bottom: 3rem;
+    /*border: solid black 1px;
+    border-radius: 5%;*/
+}
+
+
+#twoBagPeople {
+    max-width: 100%;
+    height: auto;
+}
+
+form {
+    max-width: 80%;
+}
+
+hr {
+    margin: 0rem;
+    padding: 0.5rem;
+}
+
+ul {
+    text-align: center;
+    border: none;
+    margin: none;
+}
+ul li {
+    border: none;
+    margin: none;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+
+.landing-img{
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
+ul li {
+    display: inline;
+    text-decoration: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0;
+}
+
+#googleImg {
+    max-width: 100%;
+}
+
+.spacer {
+    height: 60px;
+}
+
+
+footer {
+    text-align: center;
+    background-color: #33C3F0;
+    width: 100%;
+    color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    padding-top: 1rem;
+}
+
+#myStoreDisplay {
+    text-align: center;
+}
+
+
+#stopAndShopDisplay, #bigYDisplay, #priceChopperDisplay {
+    display: none;
+    text-align: center;
+}
+
+#stopAndShopDisplayImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 55%;
+}
+
+#priceChopperDisplayImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 55%;
+}
+
+#bigYDisplayImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+#fav3 img{
+    width: 50%;
+}
+
+#fav1, #fav2, #fav3 {
+    text-align: center;
+}
+
+
+
+/*------------Mobile Menu-----------------*/
+
+/*
+
+.mobile-container {
+    max-width: 480px;
+    margin: auto;
+    background-color: #555;
+    height: 500px;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+  }
+  
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  .topnav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+*/
