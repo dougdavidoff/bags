@@ -4,7 +4,7 @@
 
 ## Description
 
-A new app that reminds the user to use his or her reusable shopping bags whe he or she arrives at their favorite grocery store or shopping outlet.
+A new app that reminds the user to use his or her reusable shopping bags when he or she arrives at their favorite grocery store or shopping outlet.
 
 ## User Story
 
@@ -23,6 +23,10 @@ A new app that reminds the user to use his or her reusable shopping bags whe he 
 * OpenWeatherMap API - Thalia
 * UI - Jay
 
+
 ## Link To Deployed Project
  https://dougdavidoff.github.io/bags/index.html.
- 
+
+ ## Image of Deployed Project
+
+ ![](/assets/img/firstSS.png)
