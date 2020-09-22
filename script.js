@@ -63,7 +63,17 @@ function storeGeocode() {
                 method: 'GET'
             }).then(function(res){
                 console.log(res);
+
+                //stores icon based on description of response
+                var weatherIcon = res.weather[0].icon;
+
+                //alerts weather description
                 alert(res.weather[0].description)
+
+               // $('img').attr('src',  'https://openweathermap.org/img/wn/' + weatherIcon +'.png' ) <--- this 
+               //gives the icons and you will need image tag in html for it and set the attribute to the above.
+
+                //consoles the temp 
                 console.log('Temperature: ' +res.main.temp + '°F')
                 
             })
