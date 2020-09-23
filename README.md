@@ -2,9 +2,10 @@
 
 ![People Holding Reusable Bags](/assets/img/peopleHoldingBags.jpg)
 
+
 ## Description
 
-A new app that reminds the user to use his or her reusable shopping bags whe he or she arrives at their favorite grocery store or shopping outlet.
+A new app that reminds the user to use his or her reusable shopping bags when he or she arrives at their favorite grocery store or shopping outlet.
 
 ## User Story
 
@@ -14,11 +15,22 @@ A new app that reminds the user to use his or her reusable shopping bags whe he 
 
 ## APIs To Use
 
-* Google maps to locate stores near me.
-* Bandwidth SMS texting API
+* Google maps to locate stores near me
+* OpenWeatherMap API to get my weather
+* LocationIQ
 
-## Rough Breakdow of Tasks
+## Rough Breakdown of Tasks
 
 * Google Maps API - Doug
-* Messaging API - Thalia
-* UI - Jay
+* OpenWeatherMap API - Thalia
+* Skeleton Framework - UI - Jay
+
+
+## Link To Deployed Project
+ https://dougdavidoff.github.io/bags/index.html.
+
+ ## Images of Deployed Project
+
+ ![](/assets/img/firstSS.png)
+
+ ![](/assets/img/secondSS.png)
